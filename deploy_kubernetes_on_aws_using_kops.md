@@ -26,8 +26,8 @@
     kubernetes.ijal.tech.	6389	IN	NS	ns-1504.awsdns-60.org.
     ```
 
-2. membuat s3 bucket untuk menyimpan state (default region saya adalah singapore):
-  `aws s3 mb s3://clusters.kubernetes.ijal.tech`
+2. membuat s3 bucket untuk menyimpan state (default region saya adalah singapore):  
+    `aws s3 mb s3://clusters.kubernetes.ijal.tech`
 
 3. build cluster configuration:
   ```
@@ -42,9 +42,11 @@
 
   `kops update cluster kubernetes.ijal.tech --yes --state s3://clusters.kubernetes.ijal.tech`
 
-4. validate cluster: `kops validate cluster --state s3://clusters.kubernetes.ijal.tech`
+4. validate cluster:  
+    `kops validate cluster --state s3://clusters.kubernetes.ijal.tech`
 
-5. check if nodes are up: `kubectl get nodes`
+5. check if nodes are up:  
+    `kubectl get nodes`
 
 6. just for test:
   ```
@@ -65,4 +67,5 @@
   ```
 
 notes: 
-ssh to the master: `ssh -i ~/.ssh/id_rsa admin@api.kubernetes.ijal.tech`
+ssh to the master:  
+`ssh -i ~/.ssh/id_rsa admin@api.kubernetes.ijal.tech`

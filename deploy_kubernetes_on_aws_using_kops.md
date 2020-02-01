@@ -30,13 +30,15 @@ kubernetes.ijal.tech.	6389	IN	NS	ns-1504.awsdns-60.org.
 `aws s3 mb s3://clusters.kubernetes.ijal.tech`
 
 3. build cluster configuration:
-`kops create cluster --name kubernetes.ijal.tech \
+```
+kops create cluster --name kubernetes.ijal.tech \
 --state s3://clusters.kubernetes.ijal.tech \
 --zones ap-southeast-1a \
 --node-count=2 \
 --node-size t2.micro \
 --master-size t2.micro \
---dns-zone kubernetes.ijal.tech`
+--dns-zone kubernetes.ijal.tech
+```
 
 `kops update cluster kubernetes.ijal.tech --yes --state s3://clusters.kubernetes.ijal.tech`
 
@@ -46,18 +48,22 @@ kubernetes.ijal.tech.	6389	IN	NS	ns-1504.awsdns-60.org.
 5. check if nodes are up: `kubectl get nodes`
 
 6. just for test:
-`kubectl run hello-minikube \
+```
+kubectl run hello-minikube \
 --image k8s.gcr.io/echoserver:1.4 \
---port 8080`
+--port 8080
+```
 
 `kubectl expose deployment hello-minikube --type NodePort`
 
 `kubectl get services`
 
 7. delete cluster:
-```kops delete cluster kubernetes.ijal.tech \
+```
+kops delete cluster kubernetes.ijal.tech \
 --state s3://clusters.kubernetes.ijal.tech \
 --yes
+```
 
 notes: 
 ssh to the master: `ssh -i ~/.ssh/id_rsa admin@api.kubernetes.ijal.tech`

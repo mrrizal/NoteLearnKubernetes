@@ -5,9 +5,11 @@ menampilkan informasi lebih detail mengenai suatu pod
 `kubectl describe pod pod_name`
 
 membuka port di pod (create new service)
-`kubectl expose pod pod_name \
+```
+kubectl expose pod pod_name \
 --port 444 \
---name frontend`
+--name frontend
+```
 
 port forward dari exposed pod port ke local machine
 `kubectl port-forward pod_name 8080`
@@ -22,8 +24,10 @@ add label to pod
 `kubectl label pods pod_name mylabel=test`
 
 run shell in a pod (very useful for debugging)
-`kubectl run -i \
+```
+kubectl run -i \
 --tty busybod \
 --image busybox \
 --restart Never \
--- sh`
+-- sh
+```

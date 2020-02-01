@@ -57,7 +57,7 @@ kubernetes.ijal.tech.	6389	IN	NS	ns-1504.awsdns-60.org.
 7. delete cluster:
 ```kops delete cluster kubernetes.ijal.tech \
 --state s3://clusters.kubernetes.ijal.tech \
---yes```
+--yes
 
 notes: 
 ssh to the master: `ssh -i ~/.ssh/id_rsa admin@api.kubernetes.ijal.tech`

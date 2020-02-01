@@ -42,8 +42,7 @@ kops create cluster --name kubernetes.ijal.tech \
 
 `kops update cluster kubernetes.ijal.tech --yes --state s3://clusters.kubernetes.ijal.tech`
 
-4. validate cluster
-`kops validate cluster --state s3://clusters.kubernetes.ijal.tech`
+4. validate cluster: `kops validate cluster --state s3://clusters.kubernetes.ijal.tech`
 
 5. check if nodes are up: `kubectl get nodes`
 
